@@ -1,0 +1,28 @@
+{
+    "name": "thoughtco/statamic-cplisting",
+    "description": "Adds a cp-listing component to Statamic v3 for control panel lists",
+    "autoload": {
+        "psr-4": {
+            "Thoughtco\\CPListing\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ryan Mitchell"
+        }
+    ],
+    "support": {
+        "email": "help@thoughtcollective.com"
+    },
+    "extra": {
+        "statamic": {
+            "name": "CP Listing",
+            "description": "Adds a cp-listing component to Statamic v3 for control panel lists"
+        },
+        "laravel": {
+            "providers": [
+                "Thoughtco\\CPListing\\ServiceProvider"
+            ]
+        }
+    }
+}
