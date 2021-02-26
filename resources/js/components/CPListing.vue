@@ -81,7 +81,7 @@
 
               <confirmation-modal
                 v-if="deletingRow !== false"
-                :title="deletingModalTitle"
+                :title="__('Delete')"
                 :bodyText="__('Are you sure you want to delete this item?')"
                 :buttonText="__('Delete')"
                 :danger="true"

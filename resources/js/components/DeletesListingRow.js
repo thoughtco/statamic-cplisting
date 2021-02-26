@@ -6,18 +6,11 @@ export default {
   },
 
   computed: {
-    deletingModalTitle() {
-      return this.deletingModalTitleFromRowKey("source");
-    },
   },
 
   methods: {
     confirmDeleteRow(id, index) {
       this.deletingRow = { id, index };
-    },
-
-    deletingModalTitleFromRowKey(key) {
-      return __("Delete") + " " + this.rows[this.deletingRow.index][key];
     },
 
     deleteRow(resourceRoute, message) {
@@ -27,8 +20,8 @@ export default {
       this.$axios
         .delete(cp_url(`${resourceRoute}/${id}`))
         .then(() => {
-          let i = _.indexOf(this.rows, _.findWhere(this.rows, { id }));
-          this.rows.splice(i, 1);
+          let i = _.indexOf(this.items, _.findWhere(this.rows, { id }));
+          this.items.splice(i, 1);
           this.deletingRow = false;
           this.$toast.success(message);
 

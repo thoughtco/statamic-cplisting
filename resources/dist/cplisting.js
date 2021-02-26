@@ -767,9 +767,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {
-    deletingModalTitle: function deletingModalTitle() {
-      return this.deletingModalTitleFromRowKey("source");
-    }
   },
   methods: {
     confirmDeleteRow: function confirmDeleteRow(id, index) {
@@ -778,16 +775,13 @@ __webpack_require__.r(__webpack_exports__);
         index: index
       };
     },
-    deletingModalTitleFromRowKey: function deletingModalTitleFromRowKey(key) {
-      return __("Delete") + " " + this.rows[this.deletingRow.index][key];
-    },
     deleteRow: function deleteRow(resourceRoute, message) {
       var _this = this;
 
       var id = this.deletingRow.id;
       message = message || __("Deleted");
       this.$axios["delete"](cp_url("".concat(resourceRoute, "/").concat(id))).then(function () {
-        var i = _.indexOf(_this.rows, _.findWhere(_this.rows, {
+        var i = _.indexOf(_this.items, _.findWhere(_this.items, {
           id: id
         }));
 
